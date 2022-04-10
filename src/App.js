@@ -58,6 +58,7 @@ function App() {
     }
   }
   const handleMouseUp = (e) => {
+    console.log('up');
     e = e || window.event;
     if (leftRef.current < (INNER_WIDTH / 2)) {
       setLeft(5)
@@ -74,7 +75,6 @@ function App() {
   }
   useEffect(() => {
     let position = {left: 0,top: 0}
-    console.log('flot')
     if (floatLocation.left < INNER_WIDTH / 2) { //left
       position.left = floatLocation.left + 5
     } else {
@@ -86,8 +86,6 @@ function App() {
     } else {
       position.top = floatLocation.top - 600 + 50 - 15
     }
-    console.log('pos',position)
-    console.log('flloc',floatLocation)
     setBotPosition(position)
   },[floatLocation])
   
@@ -110,7 +108,7 @@ function App() {
       <>
         <div
           onMouseDown={handleMouseDown}
-          onClick={handleMouseUp}
+          // onClick={handleMouseUp}
           onMouseUpCapture={handleMouseUp }
           className={`bot-min ${visible ? 'rotate' : ''} ${isMouseDown ? 'noTransition' : ''}`}
           style={{ left, top }}

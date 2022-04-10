@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('bot-root'));
 
 root.render(
   <React.StrictMode>
